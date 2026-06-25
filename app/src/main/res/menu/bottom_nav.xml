@@ -7,26 +7,25 @@
             android:id="@+id/bottom_nav_chats"
             android:title="Chats"
             app:showAsAction="always"
-            android:icon="@drawable/icon_profile" />
-           // android:icon="@drawable/icon_logout"
+            android:icon="@drawable/email_icon" />
 
         <item
             android:id="@+id/bottom_nav_updates"
             android:title="Updates"
-            app:showAsAction="always" />
-           // android:icon="@drawable/icon_logout"/>
+            app:showAsAction="always"
+            android:icon="@drawable/icon_profile"/>
 
         <item
             android:id="@+id/bottom_nav_communities"
             android:title="Communities"
-            app:showAsAction="always"/>
-           // android:icon="@drawable/icon_logout"/>
+            app:showAsAction="always"
+            android:icon="@drawable/password_icon"/>
 
         <item
             android:id="@+id/bottom_nav_calls"
             android:title="Calls"
-            app:showAsAction="always"/>
-           // android:icon="@drawable/icon_logout"/>
+            app:showAsAction="always"
+           android:icon="@drawable/phone_icon"/>
 
 
 
