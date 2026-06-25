@@ -58,7 +58,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-
+                        android:src ="@drawable/icon_profile"
                         android:drawablePadding="12dp"
                         android:hint=" Name"
                         android:inputType="textPersonName"
@@ -79,7 +79,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-
+                        android:src ="@drawable/phone_icon"
                         android:drawablePadding="12dp"
                         android:hint="Number"
                         android:inputType="number"
@@ -100,7 +100,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-
+                        android:src ="@drawable/email_icon"
                         android:drawablePadding="12dp"
                         android:hint="Email Address"
                         android:inputType="textEmailAddress"
@@ -120,7 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-
+                        android:src ="@drawable/username_icon"
                         android:drawablePadding="12dp"
                         android:hint=" Username"
                         android:inputType="text"
@@ -140,7 +140,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-
+                        android:src="@drawable/password_icon"
                         android:drawablePadding="12dp"
                         android:hint=" Password"
                         android:inputType="textPassword"
