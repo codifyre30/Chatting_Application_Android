@@ -1,6 +1,9 @@
 package com.codifyre.chattingapp;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -14,7 +17,9 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,11 +29,26 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLoginButton;
     TextView tvLoginNewUser;
 
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        editor = preferences.edit();
+
+        if (preferences.getBoolean("IsLogin", false))
+        {
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+
+
 
         ivLoginLogo = findViewById(R.id.ivLoginLogo);
         etLoginUsername = findViewById(R.id.etLoginUsername);
@@ -67,21 +87,19 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Toast.makeText(LoginActivity.this, "Login SuccessFul", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    editor.putBoolean("IsLogin", true).commit();
                     startActivity(intent);
-                    finish();
                 }
             }
-
-
         });
 
         tvLoginNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-                startActivity(intent);
-                finish();
+                Intent i = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(i);
             }
         });
-        }
+
     }
+}
