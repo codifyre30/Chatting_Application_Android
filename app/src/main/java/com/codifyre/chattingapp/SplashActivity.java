@@ -26,6 +26,10 @@ public class SplashActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash_screen);
 
+        llMain = findViewById(R.id.llmain);
+        ivMainLogo = findViewById(R.id.ivmainlogo);
+        tvMainTitle = findViewById(R.id.tvmaintitle);
+        tvMainSlogan = findViewById(R.id.tvmainslogan);
 
 
         Handler handler = new Handler();
