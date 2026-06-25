@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp" >
         <activity
-            android:name=".RegestrationActivity"
+            android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
