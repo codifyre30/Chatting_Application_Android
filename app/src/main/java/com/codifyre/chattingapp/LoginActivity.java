@@ -1,4 +1,5 @@
 package com.codifyre.chattingapp;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -67,8 +68,22 @@ public class LoginActivity extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(LoginActivity.this, "Login SuccessFul", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
+
+
         });
+
+        tvLoginNewUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegestrationActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        }
     }
-}
