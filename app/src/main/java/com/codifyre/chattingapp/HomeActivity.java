@@ -51,21 +51,15 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             welcome();
         }
 
-      //  bottomNavigationView = findViewById(R.id.homeBottomNavigationView);
-      //  bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        //    bottomNavigationView.setSelectedItemId(R.id.homebottomnavHome);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+          bottomNavigationView.setSelectedItemId(R.id.bottom_nav_chats);
 
 
         // Initialize Toolbar
         homeToolbar = findViewById(R.id.homeToolbar);
 
-        // Attach Toolbar to Activity
-        setSupportActionBar(homeToolbar);
 
-        // Optional: Set title programmatically
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Edu Track Pro");
-        }
     }
 
     private void welcome() {
@@ -85,33 +79,31 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bottom_nav, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
 
-        if (id == R.id.bottom_nav_chats) {
-            Toast.makeText(this, "Chats Fragment Clicked", Toast.LENGTH_SHORT).show();
+        if (id == R.id.menu_new_group) {
+            Toast.makeText(this, "New group", Toast.LENGTH_SHORT).show();
             return true;
-
-        } else if (id == R.id.bottom_nav_updates) {
-            Toast.makeText(this, "Updates Fragment Clicked", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_starred_messages) {
+            Toast.makeText(this, "Starred messages", Toast.LENGTH_SHORT).show();
             return true;
-
-        } else if (id == R.id.bottom_nav_communities) {
-            Toast.makeText(this, "Communities Fragment Clicked", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_selected_chat) {
+            Toast.makeText(this, "Selected chat", Toast.LENGTH_SHORT).show();
             return true;
-
-        } else if (id == R.id.bottom_nav_calls) {
-            Toast.makeText(this, "Calls Fragment Clicked", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_mark_all_read) {
+            Toast.makeText(this, "Mark all as read", Toast.LENGTH_SHORT).show();
             return true;
-
+        } else if (id == R.id.menu_new_community) {
+            Toast.makeText(this, "New community", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.menu_my_profile) {
+            Toast.makeText(this, "My profile", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.menu_logout) {
+            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -152,15 +144,15 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         if (menuitem.getItemId() == R.id.bottom_nav_chats)
         {
-           // getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, chatsFragment).commit();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, chatsFragment).commit();
         }
         else if (menuitem.getItemId() == R.id.bottom_nav_updates)
         {
-          //  getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, classesFragment).commit();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, updatesFragment).commit();
         } else if (menuitem.getItemId() == R.id.bottom_nav_communities) {
-          //  getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, assignmentsFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,communnitiesFragment).commit();
         } else if (menuitem.getItemId() == R.id.bottom_nav_calls) {
-          //  getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, chatsFragment).commit();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, callsFragment).commit();
         }
         return false;
     }
