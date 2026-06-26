@@ -13,10 +13,10 @@
     android:background="@color/white">
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:id="@+id/ivmainlogo"
-        android:src="@drawable/codifyre_logo"
+        android:src="@drawable/codifyre_logoooo"
         />
 
     <TextView
